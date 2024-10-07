@@ -1,0 +1,24 @@
+3 5 ip:9 result:0
+
+5 ip numValue 54
+1 num one num
+7 num numValue
+7 num cip
+7 one powCount
+
+5 powCount two 28
+3 5
+1 powCount one powCount
+7 one numCount
+7 numValue cip
+
+5 numCount num 44
+3 22
+1 numValue cip numValue
+1 numCount one numCount
+3 38
+
+2 num one result
+9
+
+num:0 numValue:0 cip:0 numCount:1 powCount:1 two:2 one:1
