@@ -1,0 +1,166 @@
+3 start
+program_loc:go
+put:0
+add:1
+sub:2
+jump:3
+jumpIfEqual:4
+jumpIfLess:5
+jumpIfGreat:8
+copy:7
+halt:9
+multiply:11
+help:0
+one:1
+three:3
+four:4
+
+start:7 program_loc current_loc
+
+check_start:7 current_loc:0 help
+
+4 halt help do_halt
+4 jump help do_jump
+4 add help do_add
+4 sub help do_sub
+4 copy help do_copy
+4 jumpIfEqual help do_jumpIfEqual
+4 jumpIfLess help do_jumpIfLess
+4 jumpIfGreat help do_jumpIfGreat
+4 put help do_put
+4 multiply help do_multiply
+
+do_halt:9
+
+do_jump:1 current_loc one current_loc
+7 current_loc j_temp
+7 j_temp:0 whereToJump
+1 program_loc whereToJump whereToJump
+2 whereToJump one whereToJump
+  
+7 whereToJump current_loc
+3 check_start
+whereToJump:0
+
+do_add:1 current_loc one operandA1_loc 
+1 operandA1_loc one operandA2_loc
+1 operandA2_loc one operandA3_loc
+
+7 operandA1_loc:0 operandA1
+1 program_loc operandA1 operandA1
+2 operandA1 one operandA1
+
+7 operandA2_loc:0 operandA2
+1 program_loc operandA2 operandA2
+2 operandA2 one operandA2
+
+7 operandA3_loc:0 operandA3
+1 program_loc operandA3 operandA3
+2 operandA3 one operandA3
+
+1 operandA1:0 operandA2:0 operandA3:0
+1 current_loc four current_loc
+3 check_start
+
+do_sub:1 current_loc one operandS1_loc 
+1 operandS1_loc one operandS2_loc
+1 operandS2_loc one operandS3_loc
+
+7 operandS1_loc:0 operandS1
+1 program_loc operandS1 operandS1
+2 operandS1 one operandS1
+
+7 operandS2_loc:0 operandS2
+1 program_loc operandS2 operandS2
+2 operandS2 one operandS2
+
+7 operandS3_loc:0 operandS3
+1 program_loc operandS3 operandS3
+2 operandS3 one operandS3
+
+2 operandS1:0 operandS2:0 operandS3:0
+1 current_loc four current_loc
+3 check_start
+
+do_copy:1 current_loc one copyCell1_loc 
+1 copyCell1_loc one copyCell2_loc
+
+7 copyCell1_loc:0 copyCell1
+1 program_loc copyCell1 copyCell1
+2 copyCell1 one copyCell1
+
+7 copyCell2_loc:0 copyCell2
+1 program_loc copyCell2 copyCell2
+2 copyCell2 one copyCell2
+
+7 copyCell1:0 copyCell2:0
+1 current_loc three current_loc
+3 check_start
+
+do_jumpIfEqual:1 current_loc one eqCell1_loc 
+1 eqCell1_loc one eqCell2_loc
+1 eqCell2_loc one eqCell3_loc
+
+7 eqCell1_loc:0 eqCell1
+1 program_loc eqCell1 eqCell1
+2 eqCell1 one eqCell1
+
+7 eqCell2_loc:0 eqCell2
+1 program_loc eqCell2 eqCell2
+2 eqCell2 one eqCell2
+
+compare:4 eqCell1:0 eqCell2:0
+eqtrue
+1 current_loc four current_loc
+0 4 compare
+3 check_start
+
+eqtrue:7 eqCell3_loc:0 eqCell3
+1 program_loc eqCell3 eqCell3
+2 eqCell3 one eqCell3
+7 eqCell3 current_loc
+0 4 compare
+3 check_start
+eqCell3:0
+
+do_jumpIfLess:0 5 compare 
+3 do_jumpIfEqual
+
+do_jumpIfGreat:1 current_loc one greatCell1_loc 
+1 greatCell1_loc one greatCell2_loc
+1 greatCell2_loc one greatCell3_loc
+
+7 greatCell1_loc:0 greatCell1
+1 program_loc greatCell1 greatCell1
+2 greatCell1 one greatCell1
+
+7 greatCell2_loc:0 greatCell2
+1 program_loc greatCell2 greatCell2
+2 greatCell2 one greatCell2
+
+5 greatCell2:0 greatCell1:0
+gt_true
+1 current_loc four current_loc
+3 check_start
+
+gt_true:7 greatCell3_loc:0 greatCell3
+1 program_loc greatCell3 greatCell3
+2 greatCell3 one greatCell3
+7 greatCell3 current_loc
+3 check_start
+greatCell3:0
+
+do_put:1 current_loc one putCell1_loc 
+1 putCell1_loc one putCell2_loc
+
+7 putCell1_loc:0 putCell1
+
+7 putCell2_loc:0 putCell2
+1 program_loc putCell2 putCell2
+2 putCell2 one putCell2
+
+0 putCell1:0 putCell2:0
+1 current_loc three current_loc
+3 check_start
+
+do_multiply:go:3 5 2 7 8 3 2 13 1 1 2 14 9
