@@ -1,0 +1,31 @@
+3 5 
+number:121 result:0
+3 start
+quotient:0 remainder:0 reverse:0 duplicateOfRev:0 counter:2 zero:0 one:1 two:2 ten:10
+
+start:7 number quotient 
+check:4 quotient zero check5
+7 quotient remainder
+7 zero quotient
+
+check2:5 remainder ten check3
+1 quotient one quotient
+2 remainder ten remainder
+3 check2
+
+check3:4 reverse zero yes
+check4:5 ten counter yes
+1 reverse duplicateOfRev reverse
+1 counter one counter
+3 check4
+
+yes:1 reverse remainder reverse
+7 two counter
+7 reverse duplicateOfRev
+3 check
+
+check5:4 reverse number yes1
+stop:9
+yes1:7 one result
+3 stop
+ 
