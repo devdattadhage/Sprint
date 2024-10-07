@@ -1,0 +1,24 @@
+3 5 num:5 result:1
+7 num con
+7 num acon
+
+5 num two stop
+7 zero result 
+
+2 con one con
+5 con one 51
+
+4 con count 40
+1 result acon result
+1 count one count
+3 26
+
+7 result acon
+7 zero result
+7 zero count 
+3 18
+
+7 acon result
+3 stop
+
+count:0 con:0 acon:0 one:1 two:2 zero:0 stop:9
