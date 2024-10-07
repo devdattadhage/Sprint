@@ -1,0 +1,36 @@
+3 7
+sequence_loc:57
+sequence_length:3
+cycle_loc:63
+cycle_length:5
+3 start
+cycle_counter:1
+sequence_counter:0
+one:1
+zero:0
+
+start:7 cycle_loc cycleLoc_temp
+7 sequence_loc sequenceLoc_temp
+
+check:5 cycle_length cycle_counter stop
+
+
+4 sequence_length sequence_counter true
+7 sequenceLoc_temp:0 cycleLoc_temp:0
+
+1 sequenceLoc_temp one sequenceLoc_temp
+1 cycleLoc_temp one cycleLoc_temp
+
+
+1 cycle_counter one cycle_counter
+1 sequence_counter one sequence_counter
+3 check
+
+true:7 zero sequence_counter
+7 sequence_loc sequenceLoc_temp
+3 check
+stop:9
+
+1 2 3
+0 0 0
+
